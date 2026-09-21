@@ -4,7 +4,7 @@ export const FAILURE_CODES = ['GENERATOR_ERROR', 'SERVER_RESTARTED'] as const;
 export const failureCodeSchema = z.enum(FAILURE_CODES);
 export type FailureCode = z.infer<typeof failureCodeSchema>;
 
-// Position of an event within its run: a gapless integer starting at 1. 
+// Position of an event within its run: a gapless integer starting at 1.
 const seqSchema = z.number().int().min(1);
 
 export const deltaEventSchema = z.object({
@@ -37,7 +37,7 @@ export type FailedEvent = z.infer<typeof failedEventSchema>;
 export type RunEvent = z.infer<typeof runEventSchema>;
 export type TerminalRunEvent = CompletedEvent | FailedEvent;
 
-// A terminal event is the last event of a run,  nothing should follow it. 
+// A terminal event is the last event of a run,  nothing should follow it.
 
 export function isTerminalEvent(event: RunEvent): event is TerminalRunEvent {
   return event.type !== 'delta';
