@@ -28,28 +28,28 @@ If a submission is incomplete, record the exact missing evidence. An administrat
 
 Rate each scored area from 0 to 5:
 
-| Rating | Meaning |
-| ---: | --- |
-| 0 | No relevant evidence is present. |
-| 1 | The area is materially incomplete or misunderstood. |
-| 2 | Some relevant work exists, but important behavior is missing or fragile. |
-| 3 | Meets the stated expectations with a sound, understandable solution. |
-| 4 | Strong implementation with thoughtful handling of non-obvious concerns. |
-| 5 | Exceptional judgment that addresses meaningful risk simply and convincingly. |
+| Rating | Meaning                                                                      |
+| -----: | ---------------------------------------------------------------------------- |
+|      0 | No relevant evidence is present.                                             |
+|      1 | The area is materially incomplete or misunderstood.                          |
+|      2 | Some relevant work exists, but important behavior is missing or fragile.     |
+|      3 | Meets the stated expectations with a sound, understandable solution.         |
+|      4 | Strong implementation with thoughtful handling of non-obvious concerns.      |
+|      5 | Exceptional judgment that addresses meaningful risk simply and convincingly. |
 
 Calculate each weighted result as `(rating / 5) × weight`.
 
 ## 3. Scored review
 
-| Area | Weight | Rating (0–5) | Weighted result |
-| --- | ---: | ---: | ---: |
-| Core correctness | 25 |  |  |
-| Software architecture and decomposition | 25 |  |  |
-| Coding patterns and maintainability | 20 |  |  |
-| Failure handling | 15 |  |  |
-| Testing | 10 |  |  |
-| Communication and trade-offs | 5 |  |  |
-| **Total** | **100** |  |  |
+| Area                                    |  Weight | Rating (0–5) | Weighted result |
+| --------------------------------------- | ------: | -----------: | --------------: |
+| Core correctness                        |      25 |              |                 |
+| Software architecture and decomposition |      25 |              |                 |
+| Coding patterns and maintainability     |      20 |              |                 |
+| Failure handling                        |      15 |              |                 |
+| Testing                                 |      10 |              |                 |
+| Communication and trade-offs            |       5 |              |                 |
+| **Total**                               | **100** |              |                 |
 
 ### Core correctness — 25%
 
@@ -101,11 +101,11 @@ Calculate each weighted result as `(rating / 5) × weight`.
 
 Assess the credibility note separately from the implementation score:
 
-| Signal | Description |
-| --- | --- |
-| Insufficient | The candidate does not make their personal contribution or the system complexity clear. |
-| Plausible | The candidate describes a shipped system, their role, and at least one concrete scale or operational constraint. |
-| Strong | The candidate provides concrete evidence, clearly owns specific decisions, and explains a difficult trade-off or incident with depth. |
+| Signal       | Description                                                                                                                           |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Insufficient | The candidate does not make their personal contribution or the system complexity clear.                                               |
+| Plausible    | The candidate describes a shipped system, their role, and at least one concrete scale or operational constraint.                      |
+| Strong       | The candidate provides concrete evidence, clearly owns specific decisions, and explains a difficult trade-off or incident with depth. |
 
 Confidential work does not require exact metrics or public source code. Look for specificity and coherent reasoning rather than famous company names or unusually large numbers.
 

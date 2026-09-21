@@ -14,13 +14,13 @@ Building that experience involves more than calling a language model. It require
 
 Choose **one** of the following focused problems. You are not expected to build the complete companion.
 
-| Problem | Primary signal | Detailed brief |
-| --- | --- | --- |
-| Resumable realtime conversation | Streaming, reconnection, ordering, durable event history, and frontend state | [View problem 1](problems/01-resumable-realtime-conversation/README.md) |
-| Offline-capable mobile conversation | Mobile state, local persistence, synchronization, and idempotency | [View problem 2](problems/02-offline-mobile-conversation/README.md) |
-| Durable reminders and follow-ups | Scheduling, workflow durability, retries, time zones, and cancellation | [View problem 3](problems/03-durable-reminders/README.md) |
-| Trustworthy long-term memory | Data modelling, provenance, retrieval, correction, and user control | [View problem 4](problems/04-trustworthy-memory/README.md) |
-| Reliable AI conversation runtime | Orchestration, streaming, safety gates, cancellation, and observability | [View problem 5](problems/05-reliable-conversation-runtime/README.md) |
+| Problem                             | Primary signal                                                               | Detailed brief                                                          |
+| ----------------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Resumable realtime conversation     | Streaming, reconnection, ordering, durable event history, and frontend state | [View problem 1](problems/01-resumable-realtime-conversation/README.md) |
+| Offline-capable mobile conversation | Mobile state, local persistence, synchronization, and idempotency            | [View problem 2](problems/02-offline-mobile-conversation/README.md)     |
+| Durable reminders and follow-ups    | Scheduling, workflow durability, retries, time zones, and cancellation       | [View problem 3](problems/03-durable-reminders/README.md)               |
+| Trustworthy long-term memory        | Data modelling, provenance, retrieval, correction, and user control          | [View problem 4](problems/04-trustworthy-memory/README.md)              |
+| Reliable AI conversation runtime    | Orchestration, streaming, safety gates, cancellation, and observability      | [View problem 5](problems/05-reliable-conversation-runtime/README.md)   |
 
 Read this page first, then read the complete brief for your selected problem. The problem-specific brief is the source of truth for its acceptance criteria.
 
@@ -115,14 +115,14 @@ During review, we will consider decomposition, component boundaries, data struct
 
 Reviewers use the same public [review scorecard](REVIEW_SCORECARD.md) for every technology stack and problem choice.
 
-| Area | Weight | What we look for |
-| --- | ---: | --- |
-| Core correctness | 25% | The selected acceptance scenarios and verification benchmark work consistently. |
-| Software architecture and decomposition | 25% | Responsibilities, boundaries, interfaces, state ownership, and data flow are clear. |
-| Coding patterns and maintainability | 20% | The code is readable, consistent, idiomatic, and no more complicated than necessary. |
-| Failure handling | 15% | Important failures are identified, observable, bounded, and recoverable. |
-| Testing | 10% | Tests focus on valuable success, failure, and recovery behaviour. |
-| Communication and trade-offs | 5% | Decisions, assumptions, limitations, and alternatives are explained clearly. |
+| Area                                    | Weight | What we look for                                                                     |
+| --------------------------------------- | -----: | ------------------------------------------------------------------------------------ |
+| Core correctness                        |    25% | The selected acceptance scenarios and verification benchmark work consistently.      |
+| Software architecture and decomposition |    25% | Responsibilities, boundaries, interfaces, state ownership, and data flow are clear.  |
+| Coding patterns and maintainability     |    20% | The code is readable, consistent, idiomatic, and no more complicated than necessary. |
+| Failure handling                        |    15% | Important failures are identified, observable, bounded, and recoverable.             |
+| Testing                                 |    10% | Tests focus on valuable success, failure, and recovery behaviour.                    |
+| Communication and trade-offs            |     5% | Decisions, assumptions, limitations, and alternatives are explained clearly.         |
 
 We do not award additional points for visual polish, deployment, fashionable technology choices, raw code volume, or unrelated features unless they materially improve the selected capability.
 
