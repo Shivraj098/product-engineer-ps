@@ -50,7 +50,7 @@ type AttemptResult =
   | { kind: 'dropped'; progress: boolean }
   | { kind: 'fatal'; message: string };
 
-const DEFAULT_STALL_TIMEOUT_MS = 35_000;
+const DEFAULT_STALL_TIMEOUT_MS = 3_000;
 const MAX_CONSECUTIVE_RESYNCS = 3;
 
 function defaultSleep(ms: number, signal: AbortSignal): Promise<void> {
