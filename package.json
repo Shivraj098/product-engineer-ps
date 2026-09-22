@@ -15,7 +15,8 @@
     "lint": "eslint .",
     "format": "prettier --write \"**/*.{ts,tsx,js,mjs,json}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,mjs,json}\"",
-    "benchmark": "tsx scripts/benchmark.ts"
+    "benchmark": "tsx scripts/benchmark.ts",
+    "dev": "concurrently -n server,web -c blue,magenta \"npm run dev -w @tether/server\" \"npm run dev -w @tether/web\""
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -25,6 +26,8 @@
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.70.0",
     "vite": "^8.3.0",
-    "vitest": "^5.0.1"
+    "vitest": "^5.0.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "concurrently": "^10.0.5"
   }
 }
