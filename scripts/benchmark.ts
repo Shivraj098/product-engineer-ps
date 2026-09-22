@@ -61,7 +61,10 @@ async function main(): Promise<void> {
 
   try {
     const { conversationId } = await api.createConversation();
-    const { run } = await api.sendMessage(conversationId, { messageId: randomUUID(), content: PROMPT });
+    const { run } = await api.sendMessage(conversationId, {
+      messageId: randomUUID(),
+      content: PROMPT,
+    });
 
     const seenSeqs: number[] = [];
     const stream = new RunStream({

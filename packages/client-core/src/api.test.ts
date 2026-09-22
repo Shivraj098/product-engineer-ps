@@ -29,7 +29,10 @@ describe('ApiClient', () => {
   });
 
   it('reports a non-API failure as an http TransportError with its status', async () => {
-    const api = new ApiClient({ baseUrl: 'http://h', fetch: async () => new Response('bad gateway', { status: 502 }) });
+    const api = new ApiClient({
+      baseUrl: 'http://h',
+      fetch: async () => new Response('bad gateway', { status: 502 }),
+    });
     const error = await api.getRunSnapshot('r').catch((e) => e);
     expect(error).toBeInstanceOf(TransportError);
     expect(error).toMatchObject({ kind: 'http', status: 502 });

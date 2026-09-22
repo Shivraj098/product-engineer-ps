@@ -213,7 +213,11 @@ export class RunStream {
         case 'offline':
           continue;
         case 'fatal':
-          return this.end({ status: 'disconnected', reason: 'fatal_error', message: result.message });
+          return this.end({
+            status: 'disconnected',
+            reason: 'fatal_error',
+            message: result.message,
+          });
         case 'resync':
           resyncs += 1;
           if (resyncs > MAX_CONSECUTIVE_RESYNCS) {
@@ -314,7 +318,11 @@ export class RunStream {
     }
   }
 
-  private async classify(error: unknown, stalled: boolean, progress: boolean): Promise<AttemptResult> {
+  private async classify(
+    error: unknown,
+    stalled: boolean,
+    progress: boolean,
+  ): Promise<AttemptResult> {
     if (this.lifecycle.signal.aborted) {
       return { kind: 'stopped' };
     }
@@ -335,7 +343,9 @@ export class RunStream {
     }
     if (error instanceof TransportError && error.kind === 'http') {
       const clientError = error.status !== undefined && error.status < 500;
-      return clientError ? { kind: 'fatal', message: error.message } : { kind: 'dropped', progress };
+      return clientError
+        ? { kind: 'fatal', message: error.message }
+        : { kind: 'dropped', progress };
     }
     return { kind: 'dropped', progress }; // Network failure or a stream that broke mid-flight.
   }

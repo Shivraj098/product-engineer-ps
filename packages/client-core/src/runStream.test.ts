@@ -4,7 +4,13 @@ import { ApiClient } from './api';
 import type { BackoffPolicy } from './backoff';
 import { RunStream, type RunStreamOptions, type RunStreamState } from './runStream';
 import { createRunView, type ApplyOutcome } from './runReducer';
-import { FakeTransport, completed, delta, failed, type StreamHandle } from './testing/fakeTransport';
+import {
+  FakeTransport,
+  completed,
+  delta,
+  failed,
+  type StreamHandle,
+} from './testing/fakeTransport';
 
 function setup(options: Partial<RunStreamOptions> = {}) {
   const transport = new FakeTransport();
@@ -118,7 +124,10 @@ describe('RunStream: recovering from a dropped connection', () => {
   it('detects a gap, drops the connection and reconnects from its cursor', async () => {
     const { transport, stream } = setup();
     transport.enqueue(
-      { kind: 'stream', script: (s) => [delta(1, 'a'), delta(2, 'b'), delta(4, 'd')].forEach(s.event) },
+      {
+        kind: 'stream',
+        script: (s) => [delta(1, 'a'), delta(2, 'b'), delta(4, 'd')].forEach(s.event),
+      },
       finishWith(delta(3, 'c'), delta(4, 'd'), completed(5)),
     );
 
@@ -292,7 +301,11 @@ describe('AC6: a cursor the server cannot replay from', () => {
 
     expect(transport.eventRequests).toEqual([2, 12]);
     expect(transport.snapshotRequests).toBe(1);
-    expect(state.run).toMatchObject({ status: 'completed', text: 'twelve chunks so far!', lastSeq: 14 });
+    expect(state.run).toMatchObject({
+      status: 'completed',
+      text: 'twelve chunks so far!',
+      lastSeq: 14,
+    });
     expect(sleeps).toEqual([]);
   });
 });

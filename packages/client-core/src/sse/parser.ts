@@ -3,9 +3,7 @@ export interface SseMessage {
   data: string;
 }
 
-export type SseItem =
-  | { kind: 'message'; message: SseMessage }
-  | { kind: 'comment'; text: string };
+export type SseItem = { kind: 'message'; message: SseMessage } | { kind: 'comment'; text: string };
 
 /**
  * Incremental parser for the subset of Server-Sent Events this protocol uses:
