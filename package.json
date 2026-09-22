@@ -14,7 +14,8 @@
     "test": "npm run test --workspaces --if-present",
     "lint": "eslint .",
     "format": "prettier --write \"**/*.{ts,tsx,js,mjs,json}\"",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,mjs,json}\""
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,mjs,json}\"",
+    "benchmark": "tsx scripts/benchmark.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
