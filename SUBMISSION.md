@@ -10,7 +10,7 @@
 
 ## Run the project
 
-Prerequisites: Node.js 22.13+ and npm 10+. No database server, no API key, and no paid
+Prerequisites: Node.js 22.13 or above and npm 10  or above . No database server, no API key, and no paid
 service of any kind is required — SQLite is a local file and the reply generator is a
 deterministic fake.
 
@@ -151,7 +151,7 @@ position as the cursor, and the server resumes exactly there.
 
 ## Technology choices
 
-TypeScript everywhere (client and server share the wire contract as compiled types, not
+TypeScript is used everywhere (client and server share the wire contract as compiled types, not
 duplicated ad hoc). Express + SQLite (`better-sqlite3`) on the server: SQLite needs zero
 setup for a 10-minute reviewer path, and its synchronous API makes "append an event and
 assign its position" atomic with no interleaving to reason about — a real concern here,
